@@ -1,4 +1,4 @@
-program: kolejka-send kolejka-receive
+all: kolejka-send kolejka-receive
 
 kolejka-send: kolejka-send.c
 	gcc kolejka-send.c -o kolejka-send
