@@ -5,7 +5,7 @@
 
 struct moj_msg {
 	long mtype;
-	char msg[30];
+	char msg[40];
 }wiadomosc;
 
 int main(void)

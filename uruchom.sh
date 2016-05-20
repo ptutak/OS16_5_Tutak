@@ -8,8 +8,9 @@ cd ./ipcmd-download/
 make
 cd ..
 
-./kolejka-send
+echo "komunikacja poprzez programy:"
 
+./kolejka-send
 wiadomosc=`./kolejka-receive`
 
 echo ${wiadomosc}

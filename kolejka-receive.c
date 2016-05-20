@@ -7,12 +7,12 @@
 
 struct moj_msg {
 	long mtype;
-	char msg[30];
+	char msg[40];
 }wiadomosc;
 
 int main(void)
 {
-	key_t klucz=ftok("./kolejka-send",(long)'Z');
+	key_t klucz=ftok("./kolejka-send",(int)'Z');
 	int msgid=msgget(klucz,0600);
 	time_t rawtime;
 	struct tm* timeinfo;
@@ -36,7 +36,7 @@ int main(void)
 					bool=0;
 				
 				x++;
-			} while ((wiadomosc.msg[x]!='\0')&&(x<30));
+			} while ((wiadomosc.msg[x]!='\0')&&(x<40));
 			if (bool)
 				printf("wyraz poprawny:%s\n",wiadomosc.msg);
 			else
