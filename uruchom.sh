@@ -1,9 +1,9 @@
 #!/bin/bash
 
 make
-
-echo "komunikacja poprzez programy w C:"
-
+echo ""
+echo "Komunikacja poprzez programy w C:"
+echo ""
 ./kolejka-send
 wiadomosc=`./kolejka-receive`
 
@@ -19,8 +19,8 @@ if [[ "${wiadomosc}" != "wyraz niepoprawny" ]]; then
 	fi
 fi
 echo ""
-echo "komunikacja poprzez skrypt i ipcmd:"
-
+echo "Komunikacja poprzez skrypt i ipcmd:"
+echo ""
 git clone https://github.com/nathanweeks/ipcmd.git ./ipcmd-download
 
 cd ./ipcmd-download/
@@ -30,6 +30,7 @@ cd ..
 klucz=`./ipcmd-download/bin/ipcmd ftok ./kolejka-send 90`
 msgid=`./ipcmd-download/bin/ipcmd msgget -Q ${klucz} -e -m 0600`
 
+echo ""
 echo "Podaj wyraz:"
 read wyraz
 
@@ -66,3 +67,4 @@ if ([[ ${znak} -ge 65 ]] && [[ ${znak} -le 90 ]]) || ([[ ${znak} -ge 97 ]] && [[
 else
 	echo "wyraz niepoprawny"
 fi
+echo ""
